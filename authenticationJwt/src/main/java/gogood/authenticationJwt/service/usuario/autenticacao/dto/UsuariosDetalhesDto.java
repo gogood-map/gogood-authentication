@@ -1,6 +1,7 @@
 package gogood.authenticationJwt.service.usuario.autenticacao.dto;
 
-import gogood.authenticationJwt.domain.Usuario.Usuario;
+
+import gogood.authenticationJwt.domain.usuario.Usuario;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

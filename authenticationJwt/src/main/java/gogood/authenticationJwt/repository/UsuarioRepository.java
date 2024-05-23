@@ -1,12 +1,13 @@
-package gogood.authenticationJwt.domain.Usuario.repository;
+package gogood.authenticationJwt.repository;
 
-import gogood.authenticationJwt.domain.Usuario.Usuario;
+
+import gogood.authenticationJwt.domain.usuario.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
-@Repository
+
 public interface UsuarioRepository extends JpaRepository<Usuario, Integer> {
     Optional<Usuario> findByEmail(String email);
 

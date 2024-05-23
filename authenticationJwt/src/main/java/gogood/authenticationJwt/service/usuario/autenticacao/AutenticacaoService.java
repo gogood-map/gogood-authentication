@@ -1,7 +1,8 @@
 package gogood.authenticationJwt.service.usuario.autenticacao;
 
-import gogood.authenticationJwt.domain.Usuario.Usuario;
-import gogood.authenticationJwt.domain.Usuario.repository.UsuarioRepository;
+
+import gogood.authenticationJwt.domain.usuario.Usuario;
+import gogood.authenticationJwt.repository.UsuarioRepository;
 import gogood.authenticationJwt.service.usuario.autenticacao.dto.UsuariosDetalhesDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;

@@ -1,31 +1,39 @@
 package gogood.authenticationJwt.mapper;
 
 import gogood.authenticationJwt.domain.usuario.DTO.UsuarioNovo;
-import gogood.authenticationJwt.domain.usuario.Usuario;
-import gogood.authenticationJwt.domain.usuario.DTO.UsuarioCriacaoDTO;
+import gogood.authenticationJwt.domain.usuario.DTO.UsuarioNovoGoogle;
+import gogood.authenticationJwt.domain.usuario.Usuarios;
 import gogood.authenticationJwt.service.usuario.autenticacao.dto.UsuarioTokenDto;
 
 public class UsuarioMapper {
-    public static Usuario of(UsuarioNovo usuarioNovo){
-        Usuario usuario = new Usuario();
+    public static Usuarios of(UsuarioNovo usuarioNovo){
+        Usuarios usuarios = new Usuarios();
 
-        usuario.setEmail(usuarioNovo.email());
-        usuario.setNome( usuarioNovo.nome());
-        usuario.setSenha( usuarioNovo.senha());
-        usuario.setGenero(usuarioNovo.genero());
-        usuario.setDt_nascimento(usuarioNovo.dt_Nascimento());
-        usuario.setGoogle_id(usuarioNovo.google_id());
-        return usuario;
+        usuarios.setEmail(usuarioNovo.email());
+        usuarios.setNome( usuarioNovo.nome());
+        usuarios.setSenha( usuarioNovo.senha());
+        usuarios.setGenero(usuarioNovo.genero());
+        usuarios.setDt_nascimento(usuarioNovo.dt_Nascimento());
+        return usuarios;
+    }
+    public static Usuarios of(UsuarioNovoGoogle usuarioNovo){
+        Usuarios usuarios = new Usuarios();
+
+        usuarios.setEmail(usuarioNovo.getEmail());
+        usuarios.setNome( usuarioNovo.getNome());
+        usuarios.setGoogle_id(usuarioNovo.getGoogle_id());
+        return usuarios;
     }
 
-    public static UsuarioTokenDto of(Usuario usuario, String token){
+    public static UsuarioTokenDto of(Usuarios usuarios, String token){
         UsuarioTokenDto usuarioTokenDto = new UsuarioTokenDto();
 
-        usuarioTokenDto.setUserId(usuario.getID());
-        usuarioTokenDto.setEmail(usuario.getEmail());
-        usuarioTokenDto.setNome(usuario.getNome());
+        usuarioTokenDto.setUserId(usuarios.getID());
+        usuarioTokenDto.setEmail(usuarios.getEmail());
+        usuarioTokenDto.setNome(usuarios.getNome());
         usuarioTokenDto.setToken(token);
-
+        usuarioTokenDto.setGenero(usuarios.getGenero());
+        usuarioTokenDto.setDt_nascimento(usuarios.getDt_nascimento());
         return usuarioTokenDto;
     }
 }

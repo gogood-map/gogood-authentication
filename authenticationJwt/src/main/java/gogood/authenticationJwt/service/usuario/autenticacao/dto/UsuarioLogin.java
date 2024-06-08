@@ -2,10 +2,14 @@ package gogood.authenticationJwt.service.usuario.autenticacao.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
-public class UsuarioLoginDto {
+@Getter
+@Setter
+@AllArgsConstructor
+public class UsuarioLogin {
     @NotNull
     @NotBlank
     private String email;

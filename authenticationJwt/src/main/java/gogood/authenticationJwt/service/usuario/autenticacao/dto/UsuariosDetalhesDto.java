@@ -1,7 +1,7 @@
 package gogood.authenticationJwt.service.usuario.autenticacao.dto;
 
 
-import gogood.authenticationJwt.domain.usuario.Usuario;
+import gogood.authenticationJwt.domain.usuario.Usuarios;
 import lombok.Getter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,10 +14,10 @@ public class UsuariosDetalhesDto implements UserDetails {
     private String email;
     private String senha;
 
-    public UsuariosDetalhesDto(Usuario usuario) {
-        this.nome = usuario.getNome();
-        this.email = usuario.getEmail();
-        this.senha = usuario.getSenha();
+    public UsuariosDetalhesDto(Usuarios usuarios) {
+        this.nome = usuarios.getNome();
+        this.email = usuarios.getEmail();
+        this.senha = usuarios.getSenha();
     }
 
 

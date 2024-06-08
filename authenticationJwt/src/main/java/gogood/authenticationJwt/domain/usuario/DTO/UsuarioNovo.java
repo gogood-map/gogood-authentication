@@ -13,6 +13,7 @@ public record UsuarioNovo(
         @NotBlank
         String email,
         @Size(min = 6, max = 16)
+        @NotNull
         @NotBlank
         String senha,
         @NotBlank
@@ -20,6 +21,5 @@ public record UsuarioNovo(
         @Past
         @NotNull
         LocalDate dt_Nascimento,
-        LocalDate created_at,
-        String google_id){
+        LocalDate created_at){
 }
